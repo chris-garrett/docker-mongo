@@ -1,6 +1,6 @@
-FROM mvertes/alpine-mongo:3.6.5-0
+FROM mvertes/alpine-mongo:${IMAGE_VERSION}
 MAINTAINER Chris Garrett (https://github.com/chris-garrett/docker-mongo)
-LABEL description="Mongo on Alpine + Utils 3.6.5-0"
+LABEL description="Mongo on Alpine + Utils ${IMAGE_VERSION}"
 
 ARG DOCKERIZE_VERSION=v0.6.1
 

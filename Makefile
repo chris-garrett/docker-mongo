@@ -1,0 +1,17 @@
+
+IMAGE_VERSION=3.6.5-0
+IMAGE_NAME=chrisgarrett/mongo
+
+all: build
+
+prep:
+	IMAGE_VERSION=${IMAGE_VERSION} IMAGE_NAME=${IMAGE_NAME} envsubst '$${IMAGE_VERSION} $${IMAGE_NAME}' < ./templates/Dockerfile.template > Dockerfile
+	IMAGE_VERSION=${IMAGE_VERSION} IMAGE_NAME=${IMAGE_NAME} envsubst '$${IMAGE_VERSION} $${IMAGE_NAME}' < ./templates/README.md.template > README.md
+
+build: prep
+	docker build --rm=true -t ${IMAGE_NAME}:${IMAGE_VERSION} .
+
+run:
+	docker run --rm -it \
+		${IMAGE_NAME}:${IMAGE_VERSION} \
+		sh
