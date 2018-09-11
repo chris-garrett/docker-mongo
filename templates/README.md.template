@@ -1,0 +1,17 @@
+# ${IMAGE_NAME}
+
+* Mongo on Alpine + Utils
+
+
+## Usage
+
+```
+docker run --rm \
+      ${IMAGE_NAME}:${IMAGE_VERSION} \
+      npm start
+```
+
+
+## Credits
+
+Built on top of Marc Vertes project here: https://github.com/mvertes/docker-alpine-mongo
